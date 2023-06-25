@@ -20,6 +20,9 @@
                     <p class="navigation-item">
                         <a class="navigation-link" href="#code" data-popover>Code</a>
                     </p>
+                    <p class="navigation-item">
+                        <a class="navigation-link" href="#timeout" data-popover>Timeout</a>
+                    </p>
                 </ul>
             </nav>
         </td>
@@ -29,7 +32,7 @@
             </div>
             <table class="imgtable">
                 <tr>
-                    <td align="left">
+                    <td>
                         Statfier is an heuristic-based automated testing tool for static analyzers. Basically, it is implemented by program transformation and metamorphic testing techniques. Until now, Statfier has found 79 bugs in known static analyzers (PMD, SpotBugs, SonarQube, CheckStyle, Infer).
                     </td>
                 </tr>
@@ -333,7 +336,7 @@
                 </tr>
                 <tr>
                     <td>SpotBugs</td>
-                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2030</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2030">Link</a></td>
                     <td>Control flow structure</td>
                     <td>Pending</td>
                 </tr>
@@ -522,6 +525,16 @@
             <ul>
                 <p>
                     Open-source <a href="https://github.com/SA-Research/SourceCode">[Link]</a>
+                </p>
+            </ul>
+            <h2 id="timeout">Timeout Selection</h2>
+            <ul>
+                <p>
+                    Our evaluation is based on the effectiveness of finding bugs in each static analyzer. Intuitively, a test generation approach can discover more bugs given a longer execution time. However, due to limited resources, we would like to investigate the appropriate time limit for running the evaluated analyzers. To determine the appropriate time limit <i>timeL</i> in Statfier, we perform an experiment investigating the effect of changing <i>timeL</i> on the number of bugs found. When running Statfier on each analyzer, we gradually increase the execution time limit on our evaluated analyzers.
+                </p>
+                <img src="fig-timeout.png" width="700" height="375" title="The effect of execution time (x-axis) on the number of found bugs by each static analyzer (y-axis).">
+                <p>
+                    The above figure  shows the relationship between the number of discovered bugs and execution time. As our experiment shows that six hours is sufficient for finding bugs in all evaluated analyzers (i.e., the number of bugs does not increase after that), we select six hours as the time limit for running each analyzer in our main experiments.
                 </p>
             </ul>
         </td>
